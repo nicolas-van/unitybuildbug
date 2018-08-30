@@ -13,7 +13,7 @@ echo "Attempting to build $project for OS X"
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
   -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
-  -quit
+  -quit || exit 1
 
 echo 'Logs from build'
 cat $(pwd)/unity.log

@@ -9,7 +9,7 @@ download() {
   url="$BASE_URL/$HASH/$package"
 
   echo "Downloading from $url: "
-  curl -o `basename "$package"` "$url" | return 1
+  curl -o `basename "$package"` "$url" || return 1
 }
 
 install() {
@@ -17,11 +17,11 @@ install() {
   download "$package"
 
   echo "Installing "`basename "$package"`
-  sudo installer -dumplog -package `basename "$package"` -target / | return 1
+  sudo installer -dumplog -package `basename "$package"` -target / || return 1
 }
 
 # See $BASE_URL/$HASH/unity-$VERSION-$PLATFORM.ini for complete list
 # of available packages, where PLATFORM is `osx` or `win`
 
-install "MacEditorInstaller/Unity-$VERSION.pkg" | exit 1
-install "MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-$VERSION.pkg" | exit 1
+install "MacEditorInstaller/Unity-$VERSION.pkg" || exit 1
+install "MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-$VERSION.pkg" || exit 1
