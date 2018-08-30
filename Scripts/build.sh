@@ -1,7 +1,5 @@
 #! /bin/sh
 
-project="Super Reversi 2000"
-
 #echo "Attempting to build $project for WebGl"
 #/Applications/Unity/Unity.app/Contents/MacOS/Unity \
 #  -batchmode \
@@ -12,7 +10,7 @@ project="Super Reversi 2000"
 #  -buildTarget WebGL \
 #  -quit
 
-echo "Attempting to build $project for OS X"
+echo "Attempting to build project for OS X"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
   -nographics \
