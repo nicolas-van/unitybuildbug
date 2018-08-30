@@ -12,6 +12,7 @@ echo Attempting to build $project for OS X
   -batchmode \
   -nographics \
   -silent-crashes \
+  -force-free \
   -logFile /dev/stdout \
   -projectPath "./" \
   -buildOSXUniversalPlayer "./Build/osx/$project.app" \
