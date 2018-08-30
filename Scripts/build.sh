@@ -17,4 +17,4 @@ echo "Attempting to build project for OS X"
   -silent-crashes \
   -projectPath $(pwd) \
   -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
-  -quit
+  -quit | exit 1
