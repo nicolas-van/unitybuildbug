@@ -24,4 +24,4 @@ install() {
 # of available packages, where PLATFORM is `osx` or `win`
 
 install "MacEditorInstaller/Unity-$VERSION.pkg" || exit 1
-install "MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-$VERSION.pkg" || exit 1
+#install "MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-$VERSION.pkg" || exit 1
