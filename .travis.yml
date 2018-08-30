@@ -3,6 +3,6 @@ osx_image: xcode9.4
 rvm:
 - 2.2
 install:
-- ./Scripts/install.sh
+- bash ./Scripts/install.sh
 script:
-- ./Scripts/build.sh
+- bash ./Scripts/build.sh
