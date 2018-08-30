@@ -13,6 +13,6 @@ echo Attempting to build $project for OS X from $(pwd)
   -nographics \
   -silent-crashes \
   -logFile /dev/stdout \
-  -projectPath $(pwd) \
+  -projectPath "$(pwd)" \
   -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
   -quit || exit 1
