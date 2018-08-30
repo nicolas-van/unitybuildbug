@@ -5,6 +5,8 @@
 # Change this the name of your project. This will be the name of the final executables as well.
 project="ci-build"
 
+ls -al $(pwd)
+
 echo Attempting to build $project for OS X from $(pwd)
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
