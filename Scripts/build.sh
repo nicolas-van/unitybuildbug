@@ -15,4 +15,4 @@ echo Attempting to build $project for OS X from $(pwd)
   -logFile /dev/stdout \
   -projectPath $(pwd) \
   -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
-  -quit || exit 1
+  -quit || exit 1
