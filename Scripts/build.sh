@@ -14,6 +14,5 @@ echo Attempting to build $project for OS X
   -silent-crashes \
   -force-free \
   -logFile /dev/stdout \
-  -projectPath "$(pwd)/" \
   -buildOSXUniversalPlayer "./Build/osx/$project.app" \
   -quit || exit 1
