@@ -1,27 +1,11 @@
 #! /bin/sh
 
-BASE_URL=https://netstorage.unity3d.com/unity
-HASH=3071d1717b71
-VERSION=2018.2.5f1
+# Example install script for Unity3D project. See the entire example: https://github.com/JonathanPorta/ci-build
 
-download() {
-  file=$1
-  url="$BASE_URL/$HASH/$package"
+# This link changes from time to time. I haven't found a reliable hosted installer package for doing regular
+# installs like this. You will probably need to grab a current link from: http://unity3d.com/get-unity/download/archive
+echo 'Downloading'
+curl -o Unity.pkg https://netstorage.unity3d.com/unity/3071d1717b71/MacEditorInstaller/Unity-2018.2.5f1.pkg
 
-  echo "Downloading from $url: "
-  curl -o `basename "$package"` "$url" || return 1
-}
-
-install() {
-  package=$1
-  download "$package" || return 1
-
-  echo "Installing "`basename "$package"`
-  sudo installer -dumplog -package `basename "$package"` -target / || return 1
-}
-
-# See $BASE_URL/$HASH/unity-$VERSION-$PLATFORM.ini for complete list
-# of available packages, where PLATFORM is `osx` or `win`
-
-install "MacEditorInstaller/Unity-$VERSION.pkg" || exit 1
-#install "MacEditorTargetInstaller/UnitySetup-Mac-Support-for-Editor-$VERSION.pkg" || exit 1
+echo 'Installing Unity.pkg'
+sudo installer -dumplog -package Unity.pkg -target /
