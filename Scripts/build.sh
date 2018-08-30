@@ -1,20 +1,19 @@
 #! /bin/sh
 
-#echo "Attempting to build $project for WebGl"
-#/Applications/Unity/Unity.app/Contents/MacOS/Unity \
-#  -batchmode \
-#  -nographics \
-#  -silent-crashes \
-#  -logFile $(pwd)/unity.log \
-#  -projectPath $(pwd) \
-#  -buildTarget WebGL \
-#  -quit
+# Example build script for Unity3D project. See the entire example: https://github.com/JonathanPorta/ci-build
 
-echo "Attempting to build project for OS X"
+# Change this the name of your project. This will be the name of the final executables as well.
+project="ci-build"
+
+echo "Attempting to build $project for OS X"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
   -nographics \
   -silent-crashes \
+  -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
   -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
-  -quit | exit 1
+  -quit
+
+echo 'Logs from build'
+cat $(pwd)/unity.log
